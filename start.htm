@@ -1,0 +1,50 @@
+<html>
+
+<head>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Exploring vue.js</h2>
+        <p>Based on tutorials from: <a href="https://vuejs.org/v2/guide/">https://vuejs.org/v2/guide/</a></p>
+
+        <h3>01. ({ {  } }) Declarative Rendering</h3>
+        {{ message }}
+        <p>Name: {{ fname }}</p>
+        
+
+        <h3>02. (v-bind) - keep  element’s title attribute up-to-date with the message property on the Vue instance.</h3>
+        <span v-bind:title="spanmsg">
+            [ hover over me ]
+        </span>
+
+        <h3>03. (v-if) - Toggle the presence of an element. </h3>
+        <p>Start:</p>
+        <span v-if="seen">Now you see me</span>
+        <p>End.</p>
+
+
+        <h3>04. (v-for) directive can be used for displaying a list of items using the data from an Array:</h3>
+        <ol>
+            <li v-for="todo in todos">{{ todo.text }}</li>
+        </ol>
+
+        <h3>05. (v-on) and ( v-model) Handling User Input.</h3>
+        <p>{{ messageform }}</p>
+        Enter Message: <input v-model="messageform">
+        <button v-on:click="reverseMsg">Reverse Message</button>
+    
+
+        <h3>06. (Vue.component) building small, self-contained, and often reusable components</h3>
+        <ol>
+            <todo-item></todo-item>
+        </ol>
+    </div>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
