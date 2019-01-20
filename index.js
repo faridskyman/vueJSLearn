@@ -1,7 +1,19 @@
-// components need to alwasy be on top else (err cant find todo-item)
-Vue.component('todo-item',{
-    template: '<li>this is a todo</li>'
-})
+// // components need to alwasy be on top else (err cant find todo-item)
+// Vue.component('groc-item',{
+//     // The todo-item component now accepts a
+//     // "prop", which is like a custom attribute.
+//     // This prop is called todo.
+//     prop: ['gitem'],
+//     template: '<li>{{ item.text }}</li>'
+// })
+
+Vue.component('todo-item', {
+    // The todo-item component now accepts a
+    // "prop", which is like a custom attribute.
+    // This prop is called todo.
+    props: ['todo'],
+    template: '<li>{{ todo.text }}</li>'
+  })
 
 var app = new Vue({
     el: '#app',
@@ -15,7 +27,12 @@ var app = new Vue({
             {text:'Using Vue.js'},
             {text:'Exploring ng = Angular!'}
         ],
-        messageform: 'Enter message here.'
+        messageform: 'Enter message here.',
+        groceryList: [
+            {id:0, text: 'Carrots'},
+            {id:1, text: 'Kiwi Fruits'},
+            {id:2, text: 'Tuna in Olive oil'}
+        ]
         
     },
     methods: {
